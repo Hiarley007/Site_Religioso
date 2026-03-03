@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+   <link rel="shortcut icon" href="favicon_io/favicon-16x16.png" type="image/x-icon">
+   <title>Paróquia Nossa Senhora da Conceição</title>
+</head>
+
+<style type="text/css">
+   /*================= BARRA DE NAVEGAÇÃO (MENU) ==================*/
+
+   /*ESTILO DE TODA A PÁGINA */
+   body {
+      margin: 0;
+      /* Remove a margem externa padrão da página */
+      padding: 0;
+      /* Remove o preenchimento interno padrão da página */
+   }
+
+   /* TODA A LISTA DESORDENADA (LINKS) */
+   .menu ul {
+      list-style: none;
+      /* Remove os marcadores da lista */
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+         'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      /* Fonte */
+      display: flex;
+      /* Alinha horizontalmente */
+      justify-content: center;
+      /* Centraliza */
+      margin: 0;
+      /* SEM MARGEM EXTERNA */
+      padding: 0;
+      /* SEM MARGEM INTERNA*/
+      overflow: hidden;
+      /* Esconde qualquer conteúdo que ultrapasse o contêiner */
+      background-color: hsl(219, 90%, 43%);
+      /* Cor de fundo */
+   }
+
+   /* ESTILO PARA ITENS DE LITAS E OS LINKS*/
+   .menu li a {
+      display: block;
+      /* O link ocupa toda a área disponível no item da lista */
+      color: hsl(120, 9%, 98%);
+      /* Cor do texto do link */
+      margin: 0;
+      /* Remove margem externa do link */
+      padding: 15px 16px;
+      /* Margens Internas */
+      text-decoration: none;
+      /* Remove o sublinhado do link */
+   }
+
+   /* EFEITO AO PASSAR O MOUSE*/
+   .menu li a:hover {
+      color: lch(88.53% 88.13 100.97);
+      /* Cor do texto ao passar o mouse */
+   }
+
+   /*==================== BARRA DE NAVEGAÇÃO (MENU 02) ==================*/
+
+   /* TODA A LISTA DESORDENADA (LINKS) */
+   .home ul {
+      list-style: none;
+      /* Remove os marcadores da lista */
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+         'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      /* Fonte */
+      display: flex;
+      /* Alinha horizontalmente */
+      margin: 0;
+      /* SEM MARGEM EXTERNA */
+      padding: 0;
+      /* SEM MARGEM INTERNA*/
+      overflow: hidden;
+      /* Esconde qualquer conteúdo que ultrapasse o contêiner */
+      background-color: hsla(214, 86%, 65%, 0.925);
+      /* Cor de fundo */
+   }
+
+   /* ESTILO PARA ITENS DE LITAS E OS LINKS*/
+   .home li a {
+      display: block;
+      /* O link ocupa toda a área disponível no item da lista */
+      color: hsl(120, 9%, 98%);
+      /* Cor do texto do link */
+      margin: 0;
+      /* Remove margem externa do link */
+      padding: 40px 16px;
+      /* Margens Internas */
+      text-decoration: none;
+      /* Remove o sublinhado do link */
+   }
+
+   /* EFEITO AO PASSAR O MOUSE*/
+   .home li a:hover {
+      color: lch(92.77% 92.28 99.41);
+      /* Cor do texto ao passar o mouse */
+   }
+
+   /* ESTILO DA IMAGEM DENTRO DO MENU 02 */
+   .home img {
+      margin-top: 10px;
+      /* Margem acima */
+      margin-left: 80px;
+      /* Margem a esquerda */
+      margin-right: 60px;
+      /* Margem a direita */
+      margin-bottom: 10px;
+      /* Margem abaixo */
+      width: 250px;
+      /* Largura */
+      height: 100px;
+      /* Altura */
+   }
+
+   /* ============ MENU HAMBÚRGUER ============ */
+   /* ESTILO DO MENU 01 */
+   .hamburger {
+      display: none;
+      /* Esconde os botões por padrão (só aparecem em telas pequenas) */
+      font-size: 22px;
+      /* Tamanho do ícone e texto do botão */
+      cursor: pointer;
+      /* Mostra o cursor de mão ao passar sobre o botão */
+      padding: 15px 20px;
+      /* Margens Internas */
+      color: white;
+      /* Cor do texto (branco) */
+      border: none;
+      /* Remove a borda padrão do botão */
+      width: 100%;
+      /* Ocupa toda a largura do contêiner */
+      text-align: left;
+      /* Alinha o texto à esquerda dentro do botão */
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+         'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      /* Fonte */
+      background-color: hsl(219, 90%, 43%);
+      /* Cor de fundo do botão (azul escuro) */
+   }
+
+   /* ESTILO DO MENU 01 */
+   .hamburger2 {
+      display: none;
+      /* Esconde os botões por padrão (só aparecem em telas pequenas) */
+      font-size: 22px;
+      /* Tamanho do ícone e texto do botão */
+      cursor: pointer;
+      /* Mostra o cursor de mão ao passar sobre o botão */
+      padding: 15px 20px;
+      /* Margens Internas */
+      color: white;
+      /* Cor do texto (branco) */
+      border: none;
+      /* Remove a borda padrão do botão */
+      width: 100%;
+      /* Ocupa toda a largura do contêiner */
+      text-align: left;
+      /* Alinha o texto à esquerda dentro do botão */
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+         'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      /* Fonte */
+      background-color: hsla(214, 86%, 65%, 0.925);
+      /* Cor de fundo */
+   }
+
+   /* RESPOSIVIDADE PARA TELAS MENORES (celulares e tablets pequenos) */
+   @media (max-width: 769px) {
+
+      .hamburger,
+      .hamburger2 {
+         display: block;
+         /* Mostra os botões de menu hambúrguer */
+      }
+
+      .menu ul,
+      .home ul {
+         flex-direction: column;
+         /* Alinha os itens verticalmente */
+         display: none;
+         /* Esconde os menus inicialmente */
+         width: 100%;
+         /* Ocupa toda a largura disponível */
+      }
+
+      .menu.active ul,
+      .home.active ul {
+         display: flex;
+         /* Mostra os menus quando a classe "active" é adicionada */
+      }
+
+      .home img {
+         display: none;
+         /* Esconde a logo para economizar espaço em telas pequenas */
+      }
+   }
+
+   /* Regras para telas com largura mínima de 769px (desktops e tablets grandes) */
+   @media (min-width: 769px) {
+
+      .hamburger,
+      .hamburger2 {
+         display: none;
+         /* Esconde os botões de menu hambúrguer em telas grandes */
+      }
+
+      .menu ul,
+      .home ul {
+         display: flex;
+         /* Mostra os menus normalmente (horizontalmente) */
+      }
+   }
+
+   /*==================== TÍTULO ====================*/
+   .titulo {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+         'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      /* Fonte */
+      font-size: 18px;
+      /* Tamanho da fonte */
+      color: hsl(219, 90%, 43%);
+      /* Cor da fonte */
+      text-align: center;
+      /* Texto centralziado */
+      margin-top: 25px;
+      /* Margem acima */
+
+   }
+
+   /*====================== CARROSSEL DE NOTÍCIAS ========================*/
+   .carrossel {
+      position: relative;
+      /* Posição do texto */
+      width: 55%;
+      /*Largura do Carrossel*/
+      height: 500px;
+      /*Altura do Carrossel*/
+      margin: 20px auto;
+      /* Centralizado com margem */
+      margin-bottom: 70px;
+      /* Margens do Carrossel*/
+      overflow: hidden;
+      /*Esconde o conteúdo quando estrapola os limites*/
+      border-radius: 15px;
+      /*Arredondamento de bordas*/
+      box-shadow: 0 4px 10px hsla(214, 86%, 65%, 0.925);
+      /*Borda com: 
+      Espessura, 
+      estilo 
+      e a cor*/
+   }
+
+   /* LOCALIZAÇÃO DAS IMAGENS E FORMATOS */
+   .carrossel-slide {
+      display: flex;
+      /*Imagens ficar ao lado da outra*/
+      width: 100%;
+      /* Imagem ocupa 100% da largura do carrossel*/
+      height: 100%;
+      /* Imagem ocupa 100% da alturado carrossel */
+      transition: transform 0.7s ease-in-out;
+      /*Tempo para passar de uma imagem para outra*/
+   }
+
+   /* POSIÇÃO DAS IMAGENS */
+   .carrossel-item {
+      position: relative;
+      /*Posição das Imagens*/
+      min-width: 100%;
+      /*Posição de cada contéudo,em largura*/
+      height: 100%;
+      /*Posição de cada contéudo, em altura*/
+   }
+
+   /* ESTILO DA IMAGEM */
+   .carrossel-item img {
+      width: 100%;
+      /* Tamnho da imagem em largura */
+      height: 100%;
+      /* Tamnho da imagem em altura */
+      object-fit: cover;
+      /*imagem preencher complemente o espaço desejado*/
+   }
+
+   /*=================== ESTILO DO FUNDO MEIO TRANSPARENTE DENTRO DO CARROSSEL ============*/
+   .carrossel-texto {
+      position: absolute;
+      /*Posição do texto*/
+      top: 77%;
+      /*Local do texto*/
+      left: 50%;
+      /*Distancia para á esquerda*/
+      width: 70%;
+      /*Largura do texto*/
+      transform: translate(-50%, -50%);
+      /*Própria largura e altura para esquerda e para cima*/
+      color: white;
+      /*Cor da fonte*/
+      text-align: center;
+      /*Texto Centralizado*/
+      background-color: rgba(0, 0, 0, 0.684);
+      /*Funtdo dos textos meio preto*/
+      padding: 15px 20px;
+      /*Magens do fundo preto(Internas)*/
+      border-radius: 16px;
+      /*Bordas Internas*/
+      max-width: 80%;
+      /*Largura da do funfo*/
+   }
+
+   /* ESTILO DO TÍTULO DENTRO DO CARROSSEL */
+   .carrossel-texto h2 {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+         'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      /*Fonte*/
+      margin: 10px;
+      /* Margens externas */
+      font-size: 28px;
+      /* Define o tamanho da fonte do título como 28px */
+   }
+
+   /* ESTILO DO TEXTO DENTRO DO CARROSSEL*/
+   .carrossel-texto p {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+         'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      /*Fonte do Texto*/
+      margin: 0;
+      /* Remove todas as margens do parágrafo */
+      font-size: 18px;
+      /* Define o tamanho da fonte do parágrafo como 16px */
+      line-height: 1.5;
+      /* Define a altura da linha (espaçamento entre linhas) como 1.5x o tamanho da fonte */
+   }
+
+   /*===================== SETAS DE NOTÍCIAS ===================*/
+   /*ESTILO GERAL DAS SETAS */
+   .seta {
+      position: absolute;
+      /* Posiciona o elemento de forma absoluta dentro do contêiner pai com position relativa */
+      top: 50%;
+      /* Move a seta para 50% da altura do contêiner (meio vertical) */
+      transform: translateY(-50%);
+      /* Move a seta para cima 50% de sua própria altura (centraliza verticalmente) */
+      background: white;
+      /* Define o fundo branco */
+      border: none;
+      /* Remove qualquer borda padrão */
+      padding: 12px;
+      /* Espaçamento interno de 10px */
+      border-radius: 60%;
+      /* Arredonda as bordas para formar um botão circular */
+      cursor: pointer;
+      /* Altera o cursor para uma "mãozinha" indicando que é clicável */
+      z-index: 10;
+      /* Garante que a seta fique sobre outros elementos */
+      display: flex;
+      /* Usa flexbox para alinhar conteúdo dentro do botão */
+      align-items: center;
+      /* Centraliza verticalmente o conteúdo (ícone, por exemplo) */
+      justify-content: center;
+      /* Centraliza horizontalmente o conteúdo */
+   }
+
+   /* ESTILO DA SETA AO PASSAR O MOUSE */
+   .seta:hover {
+      background: hsla(214, 86%, 65%, 0.925);
+      /* Ao passar o mouse, o fundo fica translúcido */
+      transform: translateY(-50%) scale(1.1);
+      /* Além de manter centralizado, aumenta 10% de tamanho */
+      transition: background 0.3s ease, transform 0.3s ease;
+      /* Animação suave na mudança de fundo e escala ao interagir */
+   }
+
+   /* ESTILODA SETA ESQUERDA */
+   .seta-esquerda {
+      left: 15px;
+      /* Posiciona a seta à esquerda com 15px de margem interna da borda esquerda */
+      color: rgb(13, 12, 12);
+   }
+
+   /* ESTILO DA SETA DIREITA */
+   .seta-direita {
+      right: 15px;
+      /* Posiciona a seta à direita com 15px de margem interna da borda direita */
+      color: rgb(11, 11, 11);
+   }
+
+   /*================= NOTÍCIAS =================*/
+
+   /*TÍTULO PARA MAIS NOTÍCIAS*/
+   .title {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+         'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      /* Fonte */
+      color: hsl(219, 90%, 43%);
+      /* Cor da fonte */
+      text-align: center;
+      /* Texto centralziado */
+      margin-top: 25px;
+      /* Margem acima */
+   }
+
+   /* CONTAINER COM TODOS OS CARDS */
+   .grid-noticias {
+      display: grid;
+      /*Permite organizar os elementos em linhas e colunas */
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      /* Cria um número automático de colunas que:
+        - Têm no mínimo 300px de largura
+        - Se expandem igualmente até preencher o espaço disponível (1fr)
+        - auto-fit faz com que o número de colunas se ajuste automaticamente ao tamanho da tela 
+        */
+      gap: 20px;
+      /* Distância entre os itens */
+      margin: 20px auto;
+      /* Margens Externas */
+      max-width: 1200px;
+      /* Largura máxima */
+      padding: 0 20px;
+      /* Margens Internas */
+   }
+
+   /*ESTILO DOS CARDS*/
+   .card {
+      background: white;
+      /* Cor de fundo */
+      border-radius: 10px;
+      /* Arredondamneto de bordas */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      /*Deslocamento horizontal;
+        Deslocamento vertical;
+        Desfoque da cor;
+        Cor ao redor dos cardes*/
+      overflow: hidden;
+      /* Esconde o conteúdo quando estrapola os limites */
+   }
+
+   /* ESTILO DA IMAGEM DOS CARDS */
+   .card img {
+      width: 100%;
+      /* Largura */
+      height: 250px;
+      /* Altura */
+      object-fit: cover;
+      /* Faz a imagem preencher todo o espaço, sem distorcer */
+   }
+
+   /* ESTILO DOS TEXTOS NOS CARDS */
+   .card p {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+         'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      /* Fonte */
+      margin-left: 15px;
+      /* Margem à esquerda */
+      margin-right: 10px;
+      /* Margem a direita */
+      margin-bottom: 15px;
+      /* Margem abaixo */
+   }
+
+   /* ESTILO DOS TÍTULOS DOS CARDS */
+   .card h3 {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+         'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      /* Fonte */
+      font-size: 17px;
+      /* Tamnho da fonte */
+      color: hsl(219, 90%, 43%);
+      /* Cor da fonte */
+      padding: 15px;
+      /* Margens Internas */
+   }
+
+   /* EFEITOS AO PASSAR O MOUSE */
+   .card:hover {
+      transform: translateY(-5px);
+      /* Quando o mouse passa sobre o card, ele sobe 5px suavemente */
+      transition: transform 0.3s ease;
+      /* Transição ao passsar o mouse */
+   }
+
+
+   /*==================== RODAPÉ - FOOTER ===================*/
+   * {
+      margin: 0;
+      /* SEM MARGEM EXTERNA */
+      padding: 0;
+      /* SEM MARGEM INTERNA */
+   }
+
+   /*ESTILO GERAL DO RODAPÉ*/
+   footer {
+      background-color: hsl(219, 90%, 43%);
+      /* Cor de fundo */
+      color: white;
+      /* Cor da fonte */
+      padding: 50px 100px;
+      /* Margens Internas */
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+         'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      /* Fonte */
+   }
+
+   /*ESTILO DA IMAGEM*/
+   footer img {
+      max-width: 250px;
+      /* Largura máxima */
+      height: auto;
+      /* Altura automática */
+   }
+
+   /*CONTAINER PRINCIPAL DE TODAS COLUNAS DO RODAPÉ*/
+   #rodape {
+      display: flex;
+      /* Ficar alinhado lado a lado, horizontalamente */
+      gap: 100px;
+      /* Distância entre as colunas */
+      flex-wrap: wrap;
+      /* Permite quebrar para a outra linha */
+      justify-content: space-between;
+      /* Distribui os itens igualmente, com o maior espaço possível entre eles */
+   }
+
+   /*ESTILO COMUM PARA CADA COLUNA*/
+   #rodape div {
+      flex: 2 2 3%;
+      /* 
+    flex-grow: 2    = cresce 2x mais que grow:1
+    flex-shrink: 2  = encolhe 2x mais que shrink:1
+    flex-basis: 3%  = começa ocupando 3% do container 
+    */
+      min-width: 200px;
+      /*Largura maxima entre as colunas*/
+   }
+
+   /*TÍTULOS DE CADA COLUNA*/
+   #rodape h2 {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+         'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      /*Fonte*/
+      font-size: 25px;
+      /*Tamanho da fonte*/
+      margin-bottom: 15px;
+      /*Margem abaixo*/
+   }
+
+   /*ESTILO DE PARÁGRAFOS E ITENS DE LISTAS*/
+   #rodape p,
+   #rodape li {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+         'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      /*Fonte*/
+      font-size: 16px;
+      /*Tamanho da fonte */
+      line-height: 1.5;
+      /* Distância entre linhas */
+   }
+
+   /*=================== REDES SOCIAIS ===================*/
+
+   /*LINKS*/
+   .colunafor a {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+         'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      /* Fonte */
+      color: white;
+      /* Cor da fonte */
+      text-decoration: none;
+      /* Remove os sublinhados dos links*/
+      display: inline-block;
+      /* Permite o uso de margens e padding */
+      margin-bottom: 8px;
+      /*Margem abaixo*/
+   }
+
+   /*EFEITO AO PASSAR O MOUSE*/
+   .colunafor a:hover {
+      color: lch(92.77% 92.28 99.41);
+      /* Cor que ficará o texto */
+      transition: color 0.3s;
+      /* Transição de suavidade */
+   }
+
+   /*ÍCONES DAS REDES SOCIAIS*/
+   .sociais-midia i {
+      margin-right: 10px;
+      /* Posição dos ícones */
+   }
+
+   /*RESPOSIVIDADE DE TELAS MENORES, COMO: TABLETS, CELULARES, entre outros.*/
+   @media (max-width: 1000px) {
+      #rodape {
+         flex-direction: column;
+         /* As colunas ficam uma embaixo da outra*/
+         align-items: center;
+         /* As colunas ficam centralizadas*/
+      }
+
+      #rodape div {
+         flex: 1 1 100%;
+         /* 
+      flex-grow: 1    = cresce 1x mais que grow:1 --> CRESCE FLEXIVELMENTE
+      flex-shrink: 1  = encolhe 1x mais que shrink:1 --> ENCOLHE FLEXIVELMENTE
+      flex-basis: 100%  = começa ocupando 100% do container --> BASE FLEXÍVEL
+    */
+         max-width: 500px;
+         /* LLargura máxima entre as colunas*/
+         text-align: center;
+         /* Ostexto ficam centralizados */
+      }
+   }
+</style>
+
+<body>
+   <!-- BOTÃO HAMBÚRGUER 1 (ADICIONADO) -->
+   <button class="hamburger" onclick="toggleMenu()">☰ Menu Principal</button>
+
+   <!--Barra 01-->
+   <!--Menu 01-->
+   <div class="menu" id="menuPrincipal">
+      <ul type="disc">
+         <li><a href="site.html">Início</a></li>
+         <li><a href="frei.html">Frei Alberto Beretta</a></li>
+         <li><a href="agenda.html">Agenda Paroquial</a></li>
+         <li><a href="cbiblico.html">Círculos Bíblicos</a></li>
+         <li><a href="noticias.html">Notícias</a></li>
+         <li><a href="eventos.html">Eventos</a></li>
+      </ul>
+   </div>
+
+   <!-- BOTÃO HAMBÚRGUER 2 (ADICIONADO) -->
+   <button class="hamburger2" onclick="toggleHome()">☰ Menu Institucional</button>
+
+   <!--Barra 02-->
+   <!--Menu 02-->
+   <div class="home" id="menuHome">
+      <ul type="disc">
+         <img src="imagens/logo_paróquia.png">
+         <li><a href="paroquia.html">Paróquia</a></li>
+         <li><a href="comunidade.html">Comunidades</a></li>
+         <li><a href="clero.html">Padres</a></li>
+         <li><a href="faleconosco.html">Fale Conosco</a></li>
+         <li><a href="login.html">Login</a></li>
+         <li><a href="cadastro.html">Cadastre - se</a></li>
+         <li><a href="barra_pesquisa.html">Faça sua Busca</a></li>
+      </ul>
+   </div>
+
+   <!-- SCRIPT PARA FUNCIONAMENTO DO HAMBÚRGUER (ADICIONADO) -->
+   <script>
+      function toggleMenu() {
+         const menu = document.getElementById("menuPrincipal");
+         menu.classList.toggle("active");
+      }
+
+      function toggleHome() {
+         const menu = document.getElementById("menuHome");
+         menu.classList.toggle("active");
+      }
+   </script>
+
+   <!--TÍTULO-->
+   <div class="titulo">
+      <h2>Destaque da Nossa Paróquia</h2>
+   </div>
+
+   <!-- CARROSSEL DA NOTÍCIA PRINCIPAL -->
+   <div class="carrossel">
+      <div class="carrossel-slide">
+         <div class="carrossel-item">
+            <a href="noticia_07.html"><img src="imagens/noticia_07.jpg"></a>
+            <div class="carrossel-texto">
+               <h2>Habemus Papa!</h2>
+               <p>Após a eleição no conclave, o novo Papa foi apresentado
+                  ao mundo na sacada da Basílica de São Pedro. Fiéis de
+                  todos os cantos celebraram a escolha, marcada por esperança
+                  e renovação.
+               </p>
+            </div>
+         </div>
+
+         <div class="carrossel-item">
+            <a href="noticia_08.html"><img src="imagens/noticia_08.jpg"></a>
+            <div class="carrossel-texto">
+               <h2>Fé Renovada</h2>
+               <p>Milhares de fiéis reuniram-se em oração pela nova liderança
+                  da Igreja Católica, com celebrações em diversas partes do mundo.
+               </p>
+            </div>
+         </div>
+
+         <div class="carrossel-item">
+            <a href="noticia_09.html"><img src="imagens/noticia_09.jpeg"></a>
+            <div class="carrossel-texto">
+               <h2>Mensagem de Paz</h2>
+               <p>O novo Papa enfatizou a importância da fraternidade, da justiça
+                  social e do diálogo entre os povos na sua primeira homilia.
+               </p>
+            </div>
+         </div>
+      </div>
+
+      <button class="seta seta-esquerda" onclick="voltarSlide()">&#8592;</button>
+      <button class="seta seta-direita" onclick="avancarSlide()">&#8594;</button>
+
+   </div>
+
+   <!--SCRIPT DO CARROSSEL-->
+   <script>
+      let slideAtual = 0;
+      const slides = document.querySelectorAll('.carrossel-item');
+      const totalSlides = slides.length;
+      const carrosselSlide = document.getElementById('carrosselSlide');
+
+      function atualizarSlide() {
+         carrosselSlide.style.transform = `translateX(-${slideAtual * 100}%)`;
+      }
+
+      function avancarSlide() {
+         slideAtual = (slideAtual + 1) % totalSlides;
+         atualizarSlide();
+      }
+
+      function voltarSlide() {
+         slideAtual = (slideAtual - 1 + totalSlides) % totalSlides;
+         atualizarSlide();
+      }
+
+      setInterval(avancarSlide, 10000);
+   </script>
+
+   <div class="title">
+      <h2>Demais Notícias da Nossa Paróquia</h2><br>
+   </div>
+   <!--NOTÍCIAS -->
+   <div class="grid-noticias">
+      <div class="card">
+         <a href="noticia_01.html"><img src="imagens/noticia_01.jpeg" alt="Notícia 1"></a>
+         <h3>Sacramentos</h3>
+         <p>Os sacramentos são sinais visíveis da graça de Deus. A Igreja
+            Católica reconhece sete: batismo, eucaristia, crisma,
+            reconciliação, unção dos enfermos, ordem e matrimônio
+         </p>
+      </div>
+
+      <div class="card">
+         <a href="noticia_02.html"><img src="imagens/noticia_02.jpeg" alt="Notícia 2"></a>
+         <h3>Maria, Mãe de Jesus</h3>
+         <p>Maria tem um papel central na fé católica como Mãe de
+            Deus e modelo de fé e obediência. É especialmente venerada
+            nas orações e nas festas litúrgicas, como a Assunção e a
+            Imaculada Conceição.
+         </p>
+      </div>
+
+      <div class="card">
+         <a href="noticia_03.html"><img src="imagens/noticia_03.jpg" alt="Notícia 3"></a>
+         <h3>A Missa</h3>
+         <p>A celebração da Eucaristia é o coração da vida católica.
+            Nela, os fiéis revivem o sacrifício de Cristo e recebem o
+            Corpo e Sangue de Jesus.
+         </p>
+      </div>
+
+      <div class="card">
+         <a href="noticia_04.html"><img src="imagens/noticia_04.jpg" alt="Notícia 4"></a>
+         <h3>Os Santos</h3>
+         <p>Os santos são exemplos de vida cristã que intercedem
+            junto a Deus. Cada santo tem uma história única de fé,
+            coragem e serviço à Igreja.
+         </p>
+      </div>
+
+      <div class="card">
+         <a href="noticia_05.html"><img src="imagens/noticia_05.jpg" alt="Notícia 5"></a>
+         <h3>O Papa e o Vaticano</h3>
+         <p>O Papa é o líder espiritual da Igreja Católica, sucessor de
+            São Pedro. O Vaticano é o centro da Igreja, onde estão
+            localizados a Basílica de São Pedro e a Santa Sé.
+         </p>
+      </div>
+
+      <div class="card">
+         <a href="noticia_06.html"><img src="imagens/noticia_06.jpg" alt="Notícia 6"></a>
+         <h3>Caridade Cristã</h3>
+         <p>A Igreja Católica sempre promoveu a ajuda aos pobres,
+            doentes e necessitados. A prática da caridade é uma expressão
+            concreta do amor cristão.
+         </p>
+      </div>
+   </div>
+
+   <!--RODAPÉ-->
+   <footer>
+      <div id="rodape">
+         <div class="colunaone">
+            <img src="imagens/logo_paróquia.png">
+            <p>A Paróquia Nossa Senhora da Conceição foi criada para
+               fortalecer a fé da comunidade local e cultivar a devoção
+               à Imaculada Conceição. Desde sua fundação, tornou-se um
+               espaço de oração, celebração e acolhimento cristão.
+            </p>
+         </div>
+
+         <div class="colunatwo">
+            <h2>Secretária Paroquial</h2>
+            <p>Rua Tiradentes, S/N</p>
+            <p>Distrito Alto Brasil, <br>munícipio de Grajaú - MA</p>
+         </div>
+
+         <div class="colunathrue">
+            <h2>Atendimento</h2>
+            <p>Segunda a Sexta-Feira</p>
+            <p>Manhã: 08h às 12h</p>
+            <p id="one">ATENDIMENTO SOMENTE PELA MANHÃ</p>
+         </div>
+
+         <div class="colunafor">
+            <h2>Redes Sociais</h2>
+            <a href="#" class="sociais-midia" id="instagram">
+               <i class="fa-brands fa-instagram"></i><a href="https://www.instagram.com/paroquiansdconceicao/">Instagram
+               </a><br>
+            </a>
+
+            <!--<a href="#" class="sociais-midia" id="facebook">
+                    <i class="fa-brands fa-facebook-f"></i> <a href="#">Facebook</a><br>
+                </a>
+
+                <a href="#" class="sociais-midia" id="whatsaap">
+                    <i class="fa-brands fa-whatsapp"></i> <a href="#">WhatsApp</a><br>
+                </a> -->
+         </div>
+      </div>
+   </footer>
+</body>
+
+</html>
