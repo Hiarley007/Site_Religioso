@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - Paroquia Nossa Senhora da Conceição</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="shortcut icon" href="favicon_io/favicon-16x16.png" type="image/x-icon">
+</head>
+
+<style type="text/css">
+  /*================= BARRA DE NAVEGAÇÃO (MENU) ==================*/
+
+  /*ESTILO DE TODA A PÁGINA */
+  body {
+    margin: 0;
+    /* Remove a margem externa padrão da página */
+    padding: 0;
+    /* Remove o preenchimento interno padrão da página */
+  }
+
+  /* TODA A LISTA DESORDENADA (LINKS) */
+  .menu ul {
+    list-style: none;
+    /* Remove os marcadores da lista */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+      'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* Fonte */
+    display: flex;
+    /* Alinha horizontalmente */
+    justify-content: center;
+    /* Centraliza */
+    margin: 0;
+    /* SEM MARGEM EXTERNA */
+    padding: 0;
+    /* SEM MARGEM INTERNA*/
+    overflow: hidden;
+    /* Esconde qualquer conteúdo que ultrapasse o contêiner */
+    background-color: hsl(219, 90%, 43%);
+    /* Cor de fundo */
+  }
+
+  /* ESTILO PARA ITENS DE LITAS E OS LINKS*/
+  .menu li a {
+    display: block;
+    /* O link ocupa toda a área disponível no item da lista */
+    color: hsl(120, 9%, 98%);
+    /* Cor do texto do link */
+    margin: 0;
+    /* Remove margem externa do link */
+    padding: 15px 16px;
+    /* Margens Internas */
+    text-decoration: none;
+    /* Remove o sublinhado do link */
+  }
+
+  /* EFEITO AO PASSAR O MOUSE*/
+  .menu li a:hover {
+    color: lch(88.53% 88.13 100.97);
+    /* Cor do texto ao passar o mouse */
+  }
+
+  /*==================== BARRA DE NAVEGAÇÃO (MENU 02) ==================*/
+
+  /* TODA A LISTA DESORDENADA (LINKS) */
+  .home ul {
+    list-style: none;
+    /* Remove os marcadores da lista */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+      'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* Fonte */
+    display: flex;
+    /* Alinha horizontalmente */
+    margin: 0;
+    /* SEM MARGEM EXTERNA */
+    padding: 0;
+    /* SEM MARGEM INTERNA*/
+    overflow: hidden;
+    /* Esconde qualquer conteúdo que ultrapasse o contêiner */
+    background-color: hsla(214, 86%, 65%, 0.925);
+    /* Cor de fundo */
+  }
+
+  /* ESTILO PARA ITENS DE LITAS E OS LINKS*/
+  .home li a {
+    display: block;
+    /* O link ocupa toda a área disponível no item da lista */
+    color: hsl(120, 9%, 98%);
+    /* Cor do texto do link */
+    margin: 0;
+    /* Remove margem externa do link */
+    padding: 40px 16px;
+    /* Margens Internas */
+    text-decoration: none;
+    /* Remove o sublinhado do link */
+  }
+
+  /* EFEITO AO PASSAR O MOUSE*/
+  .home li a:hover {
+    color: lch(92.77% 92.28 99.41);
+    /* Cor do texto ao passar o mouse */
+  }
+
+  /* ESTILO DA IMAGEM DENTRO DO MENU 02 */
+  .home img {
+    margin-top: 10px;
+    /* Margem acima */
+    margin-left: 80px;
+    /* Margem a esquerda */
+    margin-right: 60px;
+    /* Margem a direita */
+    margin-bottom: 10px;
+    /* Margem abaixo */
+    width: 250px;
+    /* Largura */
+    height: 100px;
+    /* Altura */
+  }
+
+  /* ============ MENU HAMBÚRGUER ============ */
+  /* ESTILO DO MENU 01 */
+  .hamburger {
+    display: none;
+    /* Esconde os botões por padrão (só aparecem em telas pequenas) */
+    font-size: 22px;
+    /* Tamanho do ícone e texto do botão */
+    cursor: pointer;
+    /* Mostra o cursor de mão ao passar sobre o botão */
+    padding: 15px 20px;
+    /* Margens Internas */
+    color: white;
+    /* Cor do texto (branco) */
+    border: none;
+    /* Remove a borda padrão do botão */
+    width: 100%;
+    /* Ocupa toda a largura do contêiner */
+    text-align: left;
+    /* Alinha o texto à esquerda dentro do botão */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+      'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* Fonte */
+    background-color: hsl(219, 90%, 43%);
+    /* Cor de fundo do botão (azul escuro) */
+  }
+
+  /* ESTILO DO MENU 01 */
+  .hamburger2 {
+    display: none;
+    /* Esconde os botões por padrão (só aparecem em telas pequenas) */
+    font-size: 22px;
+    /* Tamanho do ícone e texto do botão */
+    cursor: pointer;
+    /* Mostra o cursor de mão ao passar sobre o botão */
+    padding: 15px 20px;
+    /* Margens Internas */
+    color: white;
+    /* Cor do texto (branco) */
+    border: none;
+    /* Remove a borda padrão do botão */
+    width: 100%;
+    /* Ocupa toda a largura do contêiner */
+    text-align: left;
+    /* Alinha o texto à esquerda dentro do botão */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+      'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* Fonte */
+    background-color: hsla(214, 86%, 65%, 0.925);
+    /* Cor de fundo */
+  }
+
+  /* RESPOSIVIDADE PARA TELAS MENORES (celulares e tablets pequenos) */
+  @media (max-width: 769px) {
+
+    .hamburger,
+    .hamburger2 {
+      display: block;
+      /* Mostra os botões de menu hambúrguer */
+    }
+
+    .menu ul,
+    .home ul {
+      flex-direction: column;
+      /* Alinha os itens verticalmente */
+      display: none;
+      /* Esconde os menus inicialmente */
+      width: 100%;
+      /* Ocupa toda a largura disponível */
+    }
+
+    .menu.active ul,
+    .home.active ul {
+      display: flex;
+      /* Mostra os menus quando a classe "active" é adicionada */
+    }
+
+    .home img {
+      display: none;
+      /* Esconde a logo para economizar espaço em telas pequenas */
+    }
+  }
+
+  /* Regras para telas com largura mínima de 769px (desktops e tablets grandes) */
+  @media (min-width: 769px) {
+
+    .hamburger,
+    .hamburger2 {
+      display: none;
+      /* Esconde os botões de menu hambúrguer em telas grandes */
+    }
+
+    .menu ul,
+    .home ul {
+      display: flex;
+      /* Mostra os menus normalmente (horizontalmente) */
+    }
+  }
+
+  /*================== TÍTULO DO FORMULÁRIO DE CADASTRO ===================*/
+
+  /*ESTILO DO TÍTULO*/
+  .titulo h2 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+      'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: hsl(219, 90%, 43%);
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  /*ESTILO DO SELECT*/
+  select {
+    width: 50%;
+    /*Lagura*/
+    padding: 12px 20px;
+    /*Margens Internas*/
+    margin: 8px;
+    /*Todas as margesn*/
+    border: 1px solid #ccc;
+    /*Borda com: 
+    Espessura, 
+    estilo 
+    e a cor*/
+    border-radius: 4px;
+    /*Arredondamento da borda*/
+  }
+
+  /*ESTILO DO FIELDSET*/
+  fieldset {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+      'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /*Fonte*/
+    font-size: 17px;
+    /*Tamnaho da fonte*/
+    width: 50%;
+    /*Largura*/
+    margin: auto;
+    /*Centraliza*/
+    border: 6px solid hsl(219, 90%, 43%);
+    /*Borda com: 
+    Espessura, 
+    estilo 
+    e a cor*/
+    border-radius: 25px;
+    /*Arredondamento da bordas*/
+    padding: 20px;
+    /*Margens Internas*/
+  }
+
+  /*ESTILO DOS INPUTS: TEXTO, NÚMERO E DATA*/
+  input[type=text],
+  input[type=number],
+  input[type=date] {
+    width: 50%;
+    /*Largura*/
+    padding: 12px 20px;
+    /*Margens Internas*/
+    margin: 8px;
+    /*Todas as margens*/
+    border: 1px solid #ccc;
+    /*Borda com: 
+    Espessura, 
+    estilo 
+    e a cor*/
+    border-radius: 4px;
+    /*Arredondamento de bordas*/
+  }
+
+  /*ESTILO RADIO = ESCOLHER ÚNICA OPÇÃO*/
+  input[type=radio] {
+    width: 5%;
+    /*Largura*/
+    padding: 12px 20px;
+    /*Margens Internas*/
+    margin: 8px;
+    /*Todas as margens*/
+    border: 1px solid #ccc;
+    /*Borda com: 
+    Espessura, 
+    estilo 
+    e a cor*/
+    border-radius: 4px;
+    /*Arredondamento das Bordas*/
+  }
+
+  /*ESTILO DO BOTÃO DE ENVIAR*/
+  input[type=submit] {
+    float: right;
+    /*Flotoando à esquerda*/
+    border: none;
+    /* Sem borda */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+      'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /*Fonte*/
+    font-size: 18px;
+    /*Tamanho da fonte*/
+    color: white;
+    /*Cor da fonte*/
+    cursor: pointer;
+    /*Mãozinha ao passar mouse*/
+    border-radius: 9px;
+    /*Arredondamento de Bordas*/
+    background-color: hsl(219, 90%, 43%);
+    /*Cor da fonte*/
+    padding: 20px;
+    /*Margens internas*/
+  }
+
+  /*==================== RODAPÉ - FOOTER ===================*/
+  * {
+    margin: 0;
+    /* SEM MARGEM EXTERNA */
+    padding: 0;
+    /* SEM MARGEM INTERNA */
+  }
+
+  /*ESTILO GERAL DO RODAPÉ*/
+  footer {
+    background-color: hsl(219, 90%, 43%);
+    /* Cor de fundo */
+    color: white;
+    /* Cor da fonte */
+    padding: 50px 100px;
+    /* Margens Internas */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+      'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* Fonte */
+  }
+
+  /*ESTILO DA IMAGEM*/
+  footer img {
+    max-width: 250px;
+    /* Largura máxima */
+    height: auto;
+    /* Altura automática */
+  }
+
+  /*CONTAINER PRINCIPAL DE TODAS COLUNAS DO RODAPÉ*/
+  #rodape {
+    display: flex;
+    /* Ficar alinhado lado a lado, horizontalamente */
+    gap: 100px;
+    /* Distância entre as colunas */
+    flex-wrap: wrap;
+    /* Permite quebrar para a outra linha */
+    justify-content: space-between;
+    /* Distribui os itens igualmente, com o maior espaço possível entre eles */
+  }
+
+  /*ESTILO COMUM PARA CADA COLUNA*/
+  #rodape div {
+    flex: 2 2 3%;
+    /* 
+    flex-grow: 2    = cresce 2x mais que grow:1
+    flex-shrink: 2  = encolhe 2x mais que shrink:1
+    flex-basis: 3%  = começa ocupando 3% do container 
+    */
+    min-width: 200px;
+    /*Largura maxima entre as colunas*/
+  }
+
+  /*TÍTULOS DE CADA COLUNA*/
+  #rodape h2 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+      'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /*Fonte*/
+    font-size: 25px;
+    /*Tamanho da fonte*/
+    margin-bottom: 15px;
+    /*Margem abaixo*/
+  }
+
+  /*ESTILO DE PARÁGRAFOS E ITENS DE LISTAS*/
+  #rodape p,
+  #rodape li {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+      'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /*Fonte*/
+    font-size: 16px;
+    /*Tamanho da fonte */
+    line-height: 1.5;
+    /* Distância entre linhas */
+  }
+
+  /*=================== REDES SOCIAIS ===================*/
+
+  /*LINKS*/
+  .colunafor a {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+      'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* Fonte */
+    color: white;
+    /* Cor da fonte */
+    text-decoration: none;
+    /* Remove os sublinhados dos links*/
+    display: inline-block;
+    /* Permite o uso de margens e padding */
+    margin-bottom: 8px;
+    /*Margem abaixo*/
+  }
+
+  /*EFEITO AO PASSAR O MOUSE*/
+  .colunafor a:hover {
+    color: lch(92.77% 92.28 99.41);
+    /* Cor que ficará o texto */
+    transition: color 0.3s;
+    /* Transição de suavidade */
+  }
+
+  /*ÍCONES DAS REDES SOCIAIS*/
+  .sociais-midia i {
+    margin-right: 10px;
+    /* Posição dos ícones */
+  }
+
+  /*RESPOSIVIDADE DE TELAS MENORES, COMO: TABLETS, CELULARES, entre outros.*/
+  @media (max-width: 1000px) {
+    #rodape {
+      flex-direction: column;
+      /* As colunas ficam uma embaixo da outra*/
+      align-items: center;
+      /* As colunas ficam centralizadas*/
+    }
+
+    #rodape div {
+      flex: 1 1 100%;
+      /* 
+      flex-grow: 1    = cresce 1x mais que grow:1 --> CRESCE FLEXIVELMENTE
+      flex-shrink: 1  = encolhe 1x mais que shrink:1 --> ENCOLHE FLEXIVELMENTE
+      flex-basis: 100%  = começa ocupando 100% do container --> BASE FLEXÍVEL
+    */
+      max-width: 500px;
+      /* LLargura máxima entre as colunas*/
+      text-align: center;
+      /* Ostexto ficam centralizados */
+    }
+  }
+</style>
+
+<body>
+  <!-- BOTÃO HAMBÚRGUER 1 (ADICIONADO) -->
+  <button class="hamburger" onclick="toggleMenu()">☰ Menu Principal</button>
+
+  <!--Barra 01-->
+  <!--Menu 01-->
+  <div class="menu" id="menuPrincipal">
+    <ul type="disc">
+      <li><a href="site.html">Início</a></li>
+      <li><a href="frei.html">Frei Alberto Beretta</a></li>
+      <li><a href="agenda.html">Agenda Paroquial</a></li>
+      <li><a href="cbiblico.html">Círculos Bíblicos</a></li>
+      <li><a href="noticias.html">Notícias</a></li>
+      <li><a href="eventos.html">Eventos</a></li>
+    </ul>
+  </div>
+
+  <!-- BOTÃO HAMBÚRGUER 2 (ADICIONADO) -->
+  <button class="hamburger2" onclick="toggleHome()">☰ Menu Institucional</button>
+
+  <!--Barra 02-->
+  <!--Menu 02-->
+  <div class="home" id="menuHome">
+    <ul type="disc">
+      <a href="site.html"><img src="imagens/logo_paróquia.png"></a>
+      <li><a href="paroquia.html">Paróquia</a></li>
+      <li><a href="comunidade.html">Comunidades</a></li>
+      <li><a href="clero.html">Padres</a></li>
+      <li><a href="faleconosco.html">Fale Conosco</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="cadastro.html">Cadastre - se</a></li>
+      <li><a href="barra_pesquisa.html">Faça sua Busca</a></li>
+    </ul>
+  </div>
+
+  <!-- SCRIPT PARA FUNCIONAMENTO DO HAMBÚRGUER (ADICIONADO) -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menuPrincipal");
+      menu.classList.toggle("active");
+    }
+
+    function toggleHome() {
+      const menu = document.getElementById("menuHome");
+      menu.classList.toggle("active");
+    }
+  </script>
+
+  <!--TÍTULO-->
+  <div class="titulo">
+    <h2>Entre para a nossa comunidade, Cadastre - se!</h2>
+  </div>
+
+  <!--FORMULÁRIO-->
+  <fieldset>
+    <legend><b>Seus dados e Informações necessárias:</b></legend>
+    <form>
+
+      <label for="name"><b>Nome:</b></label>
+      <input type="text" name="Nome" placeholder="Digite seu Nome..." required></ipunt><br>
+
+      <label for="sobrenome"><b>Sobrenome:</b></label>
+      <input type="text" name="sobrenome" placeholder="Digite seu Sobrenome..." required></ipunt><br>
+
+      <label for="endereço"><b>Endereço:</b></label>
+      <input type="text" name="endereço" placeholder="Digite seu Endereço..." required></ipunt><br>
+
+      <label for="cep"><b>CEP:</b></label>
+      <input type="number" name="cep" placeholder="Digite o CEP da sua Cidade..." required></ipunt><br>
+
+      <label for="name"><b>Complemento:</b></label>
+      <input type="text" name="Nome" placeholder="Digite o Complemento..." required></ipunt><br>
+
+      <label for="cidade"><b>Cidade:</b></label>
+      <input type="text" name="cidade" placeholder="Digite o nome da sua Cidade..." required></ipunt><br>
+
+      <label><b>Selecione seu Estado:</b></label>
+      <select id="estado" name="estado" required>
+        <option value="">Selecione aqui...</option>
+        <option value="DF">DF</option>
+        <option value="SP">SP</option>
+        <option value="RJ">RJ</option>
+        <option value="MG">MG</option>
+        <option value="AC">AC</option>
+        <option value="AL">AL</option>
+        <option value="AM">AM</option>
+        <option value="AP">AP</option>
+        <option value="ES">ES</option>
+        <option value="GO">GO</option>
+        <option value="MA">MA</option>
+        <option value="MS">MS</option>
+        <option value="MT">MT</option>
+        <option value="PA">PA</option>
+        <option value="PB">PB</option>
+        <option value="PE">PE</option>
+        <option value="PI">PI</option>
+        <option value="PR">PR</option>
+        <option value="RN">RN</option>
+        <option value="RO">RO</option>
+        <option value="RR">RR</option>
+        <option value="RS">RS</option>
+        <option value="SC">SC</option>
+        <option value="SE">SE</option>
+        <option value="TO">TO</option>
+      </select> <br>
+
+      <label><b>Sexo:</b></label><br>
+
+      <input type="radio" name="cidade" value="Masculino"></ipunt>
+      <label>Masculino</label><br>
+
+      <input type="radio" name="cidade" value="Feminino"></ipunt>
+      <label>Feminino</label><br>
+
+      <label><b>Idade:</b></label>
+      <input type="number" placeholder="Digite sua Idade..."><br>
+
+      <label><b>Data de Nascimento:</b></label>
+      <input type="date" required><br>
+
+      <label><b>Digite seu(s) Hobbie(s):</b></label>
+      <input type="text" placeholder="Digite seus Hobbies..."><br>
+
+      <label><b>Qual seu nível de Escolaridade:</b></label>
+      <select id="nível escolaridade" name="nível escolaridade" required>
+        <option value="">Selecione aqui...</option>
+        <option value="Anafalbeto">Anafalbeto</option>
+        <option value="EFI">Ensino Fundamental Incompleto</option>
+        <option value="EFC">Ensino Fundamental Completo</option>
+        <option value="EMI">Ensino Médio Incompleto</option>
+        <option value="EMC">Ensino Médio Completo</option>
+        <option value="SI">Superior Incompleto</option>
+        <option value="SC">Superior Completo</option>
+      </select><br>
+
+      <div class="button">
+        <input type="submit" value="Enviar Cadastro">
+      </div>
+  </fieldset>
+  </form><br>
+
+  <!--RODAPÉ-->
+  <footer>
+    <div id="rodape">
+      <div class="colunaone">
+        <img src="imagens/logo_paróquia.png">
+        <p>A Paróquia Nossa Senhora da Conceição foi criada para
+          fortalecer a fé da comunidade local e cultivar a devoção
+          à Imaculada Conceição. Desde sua fundação, tornou-se um
+          espaço de oração, celebração e acolhimento cristão.
+        </p>
+      </div>
+
+      <div class="colunatwo">
+        <h2>Secretária Paroquial</h2>
+        <p>Rua Tiradentes, S/N</p>
+        <p>Distrito Alto Brasil, <BR>munícipio de Grajaú - MA</p>
+      </div>
+
+      <div class="colunathrue">
+        <h2>Atendimento</h2>
+        <p>Segunda a Sexta-Feira</p>
+        <p>Manhã: 08h às 12h</p>
+        <p id="one">ATENDIMENTO SOMENTE PELA MANHÃ</p>
+      </div>
+
+      <div class="colunafor">
+        <h2>Redes Sociais</h2>
+        <a href="#" class="sociais-midia" id="instagram">
+          <i class="fa-brands fa-instagram"></i><a href="https://www.instagram.com/paroquiansdconceicao/">Instagram
+          </a><br>
+        </a>
+
+        <!--<a href="#" class="sociais-midia" id="facebook">
+                    <i class="fa-brands fa-facebook-f"></i> <a href="#">Facebook</a><br>
+                </a>
+
+                <a href="#" class="sociais-midia" id="whatsaap">
+                    <i class="fa-brands fa-whatsapp"></i> <a href="#">WhatsApp</a><br>
+                </a> -->
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
