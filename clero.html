@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clero - Paróquia Nossa Senhora da Conceição</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="shortcut icon" href="favicon_io/favicon-16x16.png" type="image/x-icon">
+</head>
+
+<style type="text/css">
+  /*================= BARRA DE NAVEGAÇÃO (MENU) ==================*/
+
+  /*ESTILO DE TODA A PÁGINA */
+  body {
+    margin: 0;
+    /* Remove a margem externa padrão da página */
+    padding: 0;
+    /* Remove o preenchimento interno padrão da página */
+  }
+
+  /* TODA A LISTA DESORDENADA (LINKS) */
+  .menu ul {
+    list-style: none;
+    /* Remove os marcadores da lista */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+      'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* Fonte */
+    display: flex;
+    /* Alinha horizontalmente */
+    justify-content: center;
+    /* Centraliza */
+    margin: 0;
+    /* SEM MARGEM EXTERNA */
+    padding: 0;
+    /* SEM MARGEM INTERNA*/
+    overflow: hidden;
+    /* Esconde qualquer conteúdo que ultrapasse o contêiner */
+    background-color: hsl(219, 90%, 43%);
+    /* Cor de fundo */
+  }
+
+  /* ESTILO PARA ITENS DE LITAS E OS LINKS*/
+  .menu li a {
+    display: block;
+    /* O link ocupa toda a área disponível no item da lista */
+    color: hsl(120, 9%, 98%);
+    /* Cor do texto do link */
+    margin: 0;
+    /* Remove margem externa do link */
+    padding: 15px 16px;
+    /* Margens Internas */
+    text-decoration: none;
+    /* Remove o sublinhado do link */
+  }
+
+  /* EFEITO AO PASSAR O MOUSE*/
+  .menu li a:hover {
+    color: lch(88.53% 88.13 100.97);
+    /* Cor do texto ao passar o mouse */
+  }
+
+  /*==================== BARRA DE NAVEGAÇÃO (MENU 02) ==================*/
+
+  /* TODA A LISTA DESORDENADA (LINKS) */
+  .home ul {
+    list-style: none;
+    /* Remove os marcadores da lista */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+      'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* Fonte */
+    display: flex;
+    /* Alinha horizontalmente */
+    margin: 0;
+    /* SEM MARGEM EXTERNA */
+    padding: 0;
+    /* SEM MARGEM INTERNA*/
+    overflow: hidden;
+    /* Esconde qualquer conteúdo que ultrapasse o contêiner */
+    background-color: hsla(214, 86%, 65%, 0.925);
+    /* Cor de fundo */
+  }
+
+  /* ESTILO PARA ITENS DE LITAS E OS LINKS*/
+  .home li a {
+    display: block;
+    /* O link ocupa toda a área disponível no item da lista */
+    color: hsl(120, 9%, 98%);
+    /* Cor do texto do link */
+    margin: 0;
+    /* Remove margem externa do link */
+    padding: 40px 16px;
+    /* Margens Internas */
+    text-decoration: none;
+    /* Remove o sublinhado do link */
+  }
+
+  /* EFEITO AO PASSAR O MOUSE*/
+  .home li a:hover {
+    color: lch(92.77% 92.28 99.41);
+    /* Cor do texto ao passar o mouse */
+  }
+
+  /* ESTILO DA IMAGEM DENTRO DO MENU 02 */
+  .home img {
+    margin-top: 10px;
+    /* Margem acima */
+    margin-left: 80px;
+    /* Margem a esquerda */
+    margin-right: 60px;
+    /* Margem a direita */
+    margin-bottom: 10px;
+    /* Margem abaixo */
+    width: 250px;
+    /* Largura */
+    height: 100px;
+    /* Altura */
+  }
+
+  /* ============ MENU HAMBÚRGUER ============ */
+  /* ESTILO DO MENU 01 */
+  .hamburger {
+    display: none;
+    /* Esconde os botões por padrão (só aparecem em telas pequenas) */
+    font-size: 22px;
+    /* Tamanho do ícone e texto do botão */
+    cursor: pointer;
+    /* Mostra o cursor de mão ao passar sobre o botão */
+    padding: 15px 20px;
+    /* Margens Internas */
+    color: white;
+    /* Cor do texto (branco) */
+    border: none;
+    /* Remove a borda padrão do botão */
+    width: 100%;
+    /* Ocupa toda a largura do contêiner */
+    text-align: left;
+    /* Alinha o texto à esquerda dentro do botão */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+      'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* Fonte */
+    background-color: hsl(219, 90%, 43%);
+    /* Cor de fundo do botão (azul escuro) */
+  }
+
+  /* ESTILO DO MENU 01 */
+  .hamburger2 {
+    display: none;
+    /* Esconde os botões por padrão (só aparecem em telas pequenas) */
+    font-size: 22px;
+    /* Tamanho do ícone e texto do botão */
+    cursor: pointer;
+    /* Mostra o cursor de mão ao passar sobre o botão */
+    padding: 15px 20px;
+    /* Margens Internas */
+    color: white;
+    /* Cor do texto (branco) */
+    border: none;
+    /* Remove a borda padrão do botão */
+    width: 100%;
+    /* Ocupa toda a largura do contêiner */
+    text-align: left;
+    /* Alinha o texto à esquerda dentro do botão */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+      'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* Fonte */
+    background-color: hsla(214, 86%, 65%, 0.925);
+    /* Cor de fundo */
+  }
+
+  /* RESPOSIVIDADE PARA TELAS MENORES (celulares e tablets pequenos) */
+  @media (max-width: 769px) {
+
+    .hamburger,
+    .hamburger2 {
+      display: block;
+      /* Mostra os botões de menu hambúrguer */
+    }
+
+    .menu ul,
+    .home ul {
+      flex-direction: column;
+      /* Alinha os itens verticalmente */
+      display: none;
+      /* Esconde os menus inicialmente */
+      width: 100%;
+      /* Ocupa toda a largura disponível */
+    }
+
+    .menu.active ul,
+    .home.active ul {
+      display: flex;
+      /* Mostra os menus quando a classe "active" é adicionada */
+    }
+
+    .home img {
+      display: none;
+      /* Esconde a logo para economizar espaço em telas pequenas */
+    }
+  }
+
+  /* Regras para telas com largura mínima de 769px (desktops e tablets grandes) */
+  @media (min-width: 769px) {
+
+    .hamburger,
+    .hamburger2 {
+      display: none;
+      /* Esconde os botões de menu hambúrguer em telas grandes */
+    }
+
+    .menu ul,
+    .home ul {
+      display: flex;
+      /* Mostra os menus normalmente (horizontalmente) */
+    }
+  }
+
+  /*================ TÍTULO ANTES DA IMAGEM ===================*/
+  .titulo {
+    color: hsl(219, 90%, 43%);
+    /*Cor da fonte*/
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+      'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /*Fonte*/
+    text-align: center;
+    /*Texto centralizado*/
+    margin: 50px;
+    /*Maargens*/
+    padding: 10px;
+    /*Margens Internas*/
+  }
+
+  /*=================== IMAGEM DO PADRE ATUAL ===================*/
+
+  /*ESTILO DA IMAGEM*/
+  .imagem img {
+    width: 400px;
+    /*Largura*/
+    height: 500px;
+    /*Altura*/
+    border-radius: 12px;
+    /*Arredondamento*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /*0 → sem deslocamento lateral (X)
+      4px → deslocamento pra baixo (Y)
+      12px → desfoque (blur) suave
+      COR DESEJÁVEL*/
+    display: flex;
+    /*Imagens ficarem lado a lado (horizontalmente)*/
+    margin: auto;
+    /*centraliza a imagem*/
+    margin-bottom: 40px;
+
+  }
+
+  /*ESTILO DO PARÁGRAFO*/
+  .paragrafo {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+      'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /*Fonte*/
+    font-size: 17px;
+    /*Tamanho da fonte*/
+    max-width: 1000px;
+    margin: auto;
+    /*Centralizado*/
+    padding: 0 20px;
+    /*Margens internas*/
+    text-align: justify;
+    /*Texto alihado*/
+    overflow: hidden;
+    /*Esconde conteúdo quando estrapola*/
+  }
+
+
+  /*================== ESTILO DO HR ==================*/
+  hr {
+    margin-left: 270px;
+    margin-right: 270px;
+    /*Margens de esquerda e direita*/
+    border-color: hsl(219, 90%, 43%);
+    border-width: 2px;
+    /*Borda: cor e espessura*/
+  }
+
+  /*=================== TÍTULO DOS DEMAIS PADRES ===================*/
+  /*ESTILO DO TÍTULO*/
+  .title {
+    color: hsl(219, 90%, 43%);
+    /*Cor da fonte*/
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+      'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /*Fonte*/
+    text-align: center;
+    /*Texto centralizado*/
+    margin: 50px;
+    /*Margens*/
+    padding: 10px;
+    /*Margens Internas*/
+  }
+
+  /*ESTILO DO CARD DOS PARDES*/
+  .padres {
+    display: flex;
+    /*Alinha horizontalmente lado a lado*/
+    flex-wrap: wrap;
+    /* Permite que os itens "quebrem" para a próxima linha */
+    justify-content: center;
+    /* Centraliza os itens horizontalmente */
+    gap: 25px;
+    /* Define o espaço entre os itens */
+    padding: 30px;
+    /*Margesn Interno*/
+    background-color: white;
+    /*Cor de fundo*/
+  }
+
+  /*ESTILO DO FIELDSET*/
+  .padres fieldset {
+    width: 250px;
+    /* Largura*/
+    border: 3px solid hsl(204, 77%, 58%);
+    /*/*Borda com: 
+    Espessura, 
+    estilo 
+    e a cor*/
+    border-radius: 15px;
+    /* Arredondamento das bordas */
+    padding: 12px;
+    /* Margesn Internas*/
+    background-color: white;
+    /* Fundo */
+    box-shadow: 0 4px 12px hsl(204, 77%, 58%);
+    /*Deslocamento horizontal;
+        Deslocamento vertical;
+        Desfoque da cor;
+        Cor ao redor dos cardes*/
+    text-align: left;
+    /*Texto a esquuerda dentro do card */
+  }
+
+  /*EFEITOS AO PASSAR O MOUSE*/
+  .padres fieldset:hover {
+    transition: transform 0.3s ease;
+    /* Adiciona uma animação suave para transformações */
+    transform: scale(1.03);
+    /* Aumenta o tamanho do card ao passar o mouse */
+  }
+
+  /*ESTILO DA IMAGEM DOS PADRES*/
+  .padres img {
+    width: 300px;
+    /* Largura */
+    height: 300px;
+    /* Altura */
+    object-fit: cover;
+    /* A imagem preenche o espaço, 
+    mantendo a proporção e cortando o excesso */
+    border-radius: 10px;
+    /* Arredonda das bordas*/
+    margin-bottom: 15px;
+    /* Espaço abaixo */
+    margin: 10px;
+    /*Todas as margens*/
+  }
+
+  /*ESTILO DO PARAGRAFO E NEGRITO DO PADRES*/
+  .padres p,
+  strong {
+    font-size: 15px;
+    /* Tamanho da fonte */
+    color: hsl(219, 90%, 43%);
+    /* Cor da fonte */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* Fonte */
+    width: 300px;
+    /* Largura */
+    margin: 10px;
+    /* Margens */
+  }
+
+  /*COR DO PARAGRAFO*/
+  .padres p {
+    color: black
+      /*cor da fonte dos paragrafos*/
+  }
+
+  /*==================== RODAPÉ - FOOTER ===================*/
+  * {
+    margin: 0;
+    /* SEM MARGEM EXTERNA */
+    padding: 0;
+    /* SEM MARGEM INTERNA */
+  }
+
+  /*ESTILO GERAL DO RODAPÉ*/
+  footer {
+    background-color: hsl(219, 90%, 43%);
+    /* Cor de fundo */
+    color: white;
+    /* Cor da fonte */
+    padding: 50px 100px;
+    /* Margens Internas */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+      'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* Fonte */
+  }
+
+  /*ESTILO DA IMAGEM*/
+  footer img {
+    max-width: 250px;
+    /* Largura máxima */
+    height: auto;
+    /* Altura automática */
+  }
+
+  /*CONTAINER PRINCIPAL DE TODAS COLUNAS DO RODAPÉ*/
+  #rodape {
+    display: flex;
+    /* Ficar alinhado lado a lado, horizontalamente */
+    gap: 100px;
+    /* Distância entre as colunas */
+    flex-wrap: wrap;
+    /* Permite quebrar para a outra linha */
+    justify-content: space-between;
+    /* Distribui os itens igualmente, com o maior espaço possível entre eles */
+  }
+
+  /*ESTILO COMUM PARA CADA COLUNA*/
+  #rodape div {
+    flex: 2 2 3%;
+    /* 
+    flex-grow: 2    = cresce 2x mais que grow:1
+    flex-shrink: 2  = encolhe 2x mais que shrink:1
+    flex-basis: 3%  = começa ocupando 3% do container 
+    */
+    min-width: 200px;
+    /*Largura maxima entre as colunas*/
+  }
+
+  /*TÍTULOS DE CADA COLUNA*/
+  #rodape h2 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+      'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /*Fonte*/
+    font-size: 25px;
+    /*Tamanho da fonte*/
+    margin-bottom: 15px;
+    /*Margem abaixo*/
+  }
+
+  /*ESTILO DE PARÁGRAFOS E ITENS DE LISTAS*/
+  #rodape p,
+  #rodape li {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+      'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /*Fonte*/
+    font-size: 16px;
+    /*Tamanho da fonte */
+    line-height: 1.5;
+    /* Distância entre linhas */
+  }
+
+  /*=================== REDES SOCIAIS ===================*/
+
+  /*LINKS*/
+  .colunafor a {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+      'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* Fonte */
+    color: white;
+    /* Cor da fonte */
+    text-decoration: none;
+    /* Remove os sublinhados dos links*/
+    display: inline-block;
+    /* Permite o uso de margens e padding */
+    margin-bottom: 8px;
+    /*Margem abaixo*/
+  }
+
+  /*EFEITO AO PASSAR O MOUSE*/
+  .colunafor a:hover {
+    color: lch(92.77% 92.28 99.41);
+    /* Cor que ficará o texto */
+    transition: color 0.3s;
+    /* Transição de suavidade */
+  }
+
+  /*ÍCONES DAS REDES SOCIAIS*/
+  .sociais-midia i {
+    margin-right: 10px;
+    /* Posição dos ícones */
+  }
+
+  /*RESPOSIVIDADE DE TELAS MENORES, COMO: TABLETS, CELULARES, entre outros.*/
+  @media (max-width: 1000px) {
+    #rodape {
+      flex-direction: column;
+      /* As colunas ficam uma embaixo da outra*/
+      align-items: center;
+      /* As colunas ficam centralizadas*/
+    }
+
+    #rodape div {
+      flex: 1 1 100%;
+      /* 
+      flex-grow: 1    = cresce 1x mais que grow:1 --> CRESCE FLEXIVELMENTE
+      flex-shrink: 1  = encolhe 1x mais que shrink:1 --> ENCOLHE FLEXIVELMENTE
+      flex-basis: 100%  = começa ocupando 100% do container --> BASE FLEXÍVEL
+    */
+      max-width: 500px;
+      /* LLargura máxima entre as colunas*/
+      text-align: center;
+      /* Ostexto ficam centralizados */
+    }
+  }
+</style>
+
+<body>
+  <!-- BOTÃO HAMBÚRGUER 1 (ADICIONADO) -->
+  <button class="hamburger" onclick="toggleMenu()">☰ Menu Principal</button>
+
+  <!--Barra 01-->
+  <!--Menu 01-->
+  <div class="menu" id="menuPrincipal">
+    <ul type="disc">
+      <li><a href="site.html">Início</a></li>
+      <li><a href="frei.html">Frei Alberto Beretta</a></li>
+      <li><a href="agenda.html">Agenda Paroquial</a></li>
+      <li><a href="cbiblico.html">Círculos Bíblicos</a></li>
+      <li><a href="noticias.html">Notícias</a></li>
+      <li><a href="eventos.html">Eventos</a></li>
+    </ul>
+  </div>
+
+  <!-- BOTÃO HAMBÚRGUER 2 (ADICIONADO) -->
+  <button class="hamburger2" onclick="toggleHome()">☰ Menu Institucional</button>
+
+  <!--Barra 02-->
+  <!--Menu 02-->
+  <div class="home" id="menuHome">
+    <ul type="disc">
+      <a href="site.html"><img src="imagens/logo_paróquia.png"></a>
+      <li><a href="paroquia.html">Paróquia</a></li>
+      <li><a href="comunidade.html">Comunidades</a></li>
+      <li><a href="clero.html">Padres</a></li>
+      <li><a href="faleconosco.html">Fale Conosco</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="cadastro.html">Cadastre - se</a></li>
+      <li><a href="barra_pesquisa.html">Faça sua Busca</a></li>
+    </ul>
+  </div>
+
+  <!-- SCRIPT PARA FUNCIONAMENTO DO HAMBÚRGUER (ADICIONADO) -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menuPrincipal");
+      menu.classList.toggle("active");
+    }
+
+    function toggleHome() {
+      const menu = document.getElementById("menuHome");
+      menu.classList.toggle("active");
+    }
+  </script>
+
+  <!--TÍTULO-->
+  <div class="titulo">
+    <h2>Padre Atual: Edgar de Sousa</h2>
+  </div>
+
+  <!--IMAGEM-->
+  <div class="imagem">
+    <img src="imagens/edgar.jpg">
+  </div>
+
+  <!--SUA HISTÓRIA-->
+  <div class="paragrafo">
+    <p>O Padre Edgar da Silva Alves nasceu em 5 de janeiro de 1978
+      e foi ordenado sacerdote em 20 de agosto de 2011. Desde então,
+      vem dedicando sua vida ao serviço da Igreja e da comunidade
+      com humildade, sabedoria e profundo amor ao próximo.
+    </p><br>
+
+    <p>Atualmente, é o pároco da Paróquia Nossa Senhora da Conceição,
+      situada no povoado de Alto Brasil, no município de Grajaú, Maranhão.
+      Sob sua liderança, a paróquia tem se destacado como um espaço de
+      acolhimento, fé e transformação social.
+    </p><br>
+
+    <p>Além de celebrar missas e administrar os sacramentos, Padre Edgar
+      tem se empenhado em fortalecer a vida pastoral e comunitária da
+      região. Organiza formações para leigos, encontros de jovens,
+      celebrações marianas e ações solidárias voltadas às famílias
+      mais necessitadas. Sua presença constante junto ao povo, seja
+      nas ruas do povoado, nas casas dos fiéis ou nas celebrações, faz
+      dele uma referência de pastor próximo e comprometido com sua missão.
+    </p><br>
+
+    <p>Sua atuação firme, porém acolhedora, tem contribuído para despertar
+      novas vocações e promover a vivência do Evangelho de forma concreta.
+      Com profundo respeito pela cultura local e pelas tradições religiosas
+      da comunidade, Padre Edgar une fé e serviço em cada passo de sua
+      caminhada sacerdotal.
+    </p><br>
+
+    <p>Sob sua orientação, a Paróquia Nossa Senhora da Conceição se mantém
+      viva, dinâmica e aberta ao diálogo, sendo um verdadeiro sinal da
+      presença de Deus em meio ao povo de Alto Brasil.
+    </p><br><br><br>
+  </div>
+
+  <!--BORDA DE DIVISÃO-->
+  <hr>
+
+  <!--TÍTULO-->
+  <div class="title">
+    <h2>Aqui passaram homens de fé que ajudaram a construir nossa história. Veja!</h2>
+  </div>
+
+  <!--PADRES-->
+  <div class="padres">
+    <fieldset>
+      <img src="imagens/wesley.jpg">
+      <p><strong>Nome:</strong>Wesley da Silva Costa</p>
+      <p><strong>Nascimento:</strong>29/10/1950</p>
+      <p><strong>Período:</strong>Do dia 30/10/1985 até dia 14/05/2008</p>
+    </fieldset>
+
+    <fieldset>
+      <img src="imagens/marcelo.png">
+      <p><strong>Nome:</strong>Marcelo Rossi</p>
+      <p><strong>Nascimento:</strong>20/05/1967</p>
+      <p><strong>Período:</strong>Do dia 01/12/1994 até dia 20/05/2025</p>
+    </fieldset>
+
+    <fieldset>
+      <img src="imagens/rodrigo.jpeg">
+      <p><strong>Nome:</strong>Rodrigo da Silva Pereira</p>
+      <p><strong>Nascimento:</strong>07/03/1977</p>
+      <p><strong>Período:</strong>Do dia 14/10/2000 até dia 26/05/2025</p>
+    </fieldset>
+
+    <fieldset>
+      <img src="imagens/regiano.jpg">
+      <p><strong>Nome:</strong>Regiano Sabino da Silva</p>
+      <p><strong>Nascimento:</strong>15/10/1965</p>
+      <p><strong>Período:</strong>Do dia 14/10/1998 até dia 14/05/2003</p>
+    </fieldset>
+
+    <fieldset>
+      <img src="imagens/leandro.jpeg">
+      <p><strong>Nome:</strong>Leadro Araujo Costa</p>
+      <p><strong>Nascimento:</strong>12/09/1965</p>
+      <p><strong>Período:</strong>Do dia 14/10/1998 até dia 14/05/2003</p>
+    </fieldset>
+
+    <fieldset>
+      <img src="imagens/divino.jpg">
+      <p><strong>Nome:</strong>Divino Antônio Pontes Moraes</p>
+      <p><strong>Nascimento:</strong>25/08/1972</p>
+      <p><strong>Período:</strong>Do dia 13/05/1998 até dia 14/05/2025</p>
+    </fieldset>
+  </div>
+
+  <!--RODAPÉ-->
+  <footer>
+    <div id="rodape">
+      <div class="colunaone">
+        <img src="imagens/logo_paróquia.png">
+        <p>A Paróquia Nossa Senhora da Conceição foi criada para
+          fortalecer a fé da comunidade local e cultivar a devoção
+          à Imaculada Conceição. Desde sua fundação, tornou-se um
+          espaço de oração, celebração e acolhimento cristão.
+        </p>
+      </div>
+
+      <div class="colunatwo">
+        <h2>Secretária Paroquial</h2>
+        <p>Rua Tiradentes, S/N</p>
+        <p>Distrito Alto Brasil, <BR>munícipio de Grajaú - MA</p>
+      </div>
+
+      <div class="colunathrue">
+        <h2>Atendimento</h2>
+        <p>Segunda a Sexta-Feira</p>
+        <p>Manhã: 08h às 12h</p>
+        <p id="one">ATENDIMENTO SOMENTE PELA MANHÃ</p>
+      </div>
+
+      <div class="colunafor">
+        <h2>Redes Sociais</h2>
+        <a href="#" class="sociais-midia" id="instagram">
+          <i class="fa-brands fa-instagram"></i><a href="https://www.instagram.com/paroquiansdconceicao/">Instagram
+          </a><br>
+        </a>
+
+        <!--<a href="#" class="sociais-midia" id="facebook">
+                    <i class="fa-brands fa-facebook-f"></i> <a href="#">Facebook</a><br>
+                </a>
+
+                <a href="#" class="sociais-midia" id="whatsaap">
+                    <i class="fa-brands fa-whatsapp"></i> <a href="#">WhatsApp</a><br>
+                </a> -->
+      </div>
+    </div>
+  </footer>
+
+  </div>
+</body>
+
+</html>
