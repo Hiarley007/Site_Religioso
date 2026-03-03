@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Notícias - Paróquia Nossa Senhora da Conceição</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="shortcut icon" href="favicon_io/favicon-16x16.png" type="image/x-icon">
+</head>
+
+<style type="text/css">
+    /*================= BARRA DE NAVEGAÇÃO (MENU) ==================*/
+
+    /*ESTILO DE TODA A PÁGINA */
+    body {
+        margin: 0;
+        /* Remove a margem externa padrão da página */
+        padding: 0;
+        /* Remove o preenchimento interno padrão da página */
+    }
+
+    /* TODA A LISTA DESORDENADA (LINKS) */
+    .menu ul {
+        list-style: none;
+        /* Remove os marcadores da lista */
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+            'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        /* Fonte */
+        display: flex;
+        /* Alinha horizontalmente */
+        justify-content: center;
+        /* Centraliza */
+        margin: 0;
+        /* SEM MARGEM EXTERNA */
+        padding: 0;
+        /* SEM MARGEM INTERNA*/
+        overflow: hidden;
+        /* Esconde qualquer conteúdo que ultrapasse o contêiner */
+        background-color: hsl(219, 90%, 43%);
+        /* Cor de fundo */
+    }
+
+    /* ESTILO PARA ITENS DE LITAS E OS LINKS*/
+    .menu li a {
+        display: block;
+        /* O link ocupa toda a área disponível no item da lista */
+        color: hsl(120, 9%, 98%);
+        /* Cor do texto do link */
+        margin: 0;
+        /* Remove margem externa do link */
+        padding: 15px 16px;
+        /* Margens Internas */
+        text-decoration: none;
+        /* Remove o sublinhado do link */
+    }
+
+    /* EFEITO AO PASSAR O MOUSE*/
+    .menu li a:hover {
+        color: lch(88.53% 88.13 100.97);
+        /* Cor do texto ao passar o mouse */
+    }
+
+    /*==================== BARRA DE NAVEGAÇÃO (MENU 02) ==================*/
+
+    /* TODA A LISTA DESORDENADA (LINKS) */
+    .home ul {
+        list-style: none;
+        /* Remove os marcadores da lista */
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+            'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        /* Fonte */
+        display: flex;
+        /* Alinha horizontalmente */
+        margin: 0;
+        /* SEM MARGEM EXTERNA */
+        padding: 0;
+        /* SEM MARGEM INTERNA*/
+        overflow: hidden;
+        /* Esconde qualquer conteúdo que ultrapasse o contêiner */
+        background-color: hsla(214, 86%, 65%, 0.925);
+        /* Cor de fundo */
+    }
+
+    /* ESTILO PARA ITENS DE LITAS E OS LINKS*/
+    .home li a {
+        display: block;
+        /* O link ocupa toda a área disponível no item da lista */
+        color: hsl(120, 9%, 98%);
+        /* Cor do texto do link */
+        margin: 0;
+        /* Remove margem externa do link */
+        padding: 40px 16px;
+        /* Margens Internas */
+        text-decoration: none;
+        /* Remove o sublinhado do link */
+    }
+
+    /* EFEITO AO PASSAR O MOUSE*/
+    .home li a:hover {
+        color: lch(92.77% 92.28 99.41);
+        /* Cor do texto ao passar o mouse */
+    }
+
+    /* ESTILO DA IMAGEM DENTRO DO MENU 02 */
+    .home img {
+        margin-top: 10px;
+        /* Margem acima */
+        margin-left: 80px;
+        /* Margem a esquerda */
+        margin-right: 60px;
+        /* Margem a direita */
+        margin-bottom: 10px;
+        /* Margem abaixo */
+        width: 250px;
+        /* Largura */
+        height: 100px;
+        /* Altura */
+    }
+
+    /* ============ MENU HAMBÚRGUER ============ */
+    /* ESTILO DO MENU 01 */
+    .hamburger {
+        display: none;
+        /* Esconde os botões por padrão (só aparecem em telas pequenas) */
+        font-size: 22px;
+        /* Tamanho do ícone e texto do botão */
+        cursor: pointer;
+        /* Mostra o cursor de mão ao passar sobre o botão */
+        padding: 15px 20px;
+        /* Margens Internas */
+        color: white;
+        /* Cor do texto (branco) */
+        border: none;
+        /* Remove a borda padrão do botão */
+        width: 100%;
+        /* Ocupa toda a largura do contêiner */
+        text-align: left;
+        /* Alinha o texto à esquerda dentro do botão */
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+            'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        /* Fonte */
+        background-color: hsl(219, 90%, 43%);
+        /* Cor de fundo do botão (azul escuro) */
+    }
+
+    /* ESTILO DO MENU 01 */
+    .hamburger2 {
+        display: none;
+        /* Esconde os botões por padrão (só aparecem em telas pequenas) */
+        font-size: 22px;
+        /* Tamanho do ícone e texto do botão */
+        cursor: pointer;
+        /* Mostra o cursor de mão ao passar sobre o botão */
+        padding: 15px 20px;
+        /* Margens Internas */
+        color: white;
+        /* Cor do texto (branco) */
+        border: none;
+        /* Remove a borda padrão do botão */
+        width: 100%;
+        /* Ocupa toda a largura do contêiner */
+        text-align: left;
+        /* Alinha o texto à esquerda dentro do botão */
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+            'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        /* Fonte */
+        background-color: hsla(214, 86%, 65%, 0.925);
+        /* Cor de fundo */
+    }
+
+    /* RESPOSIVIDADE PARA TELAS MENORES (celulares e tablets pequenos) */
+    @media (max-width: 769px) {
+
+        .hamburger,
+        .hamburger2 {
+            display: block;
+            /* Mostra os botões de menu hambúrguer */
+        }
+
+        .menu ul,
+        .home ul {
+            flex-direction: column;
+            /* Alinha os itens verticalmente */
+            display: none;
+            /* Esconde os menus inicialmente */
+            width: 100%;
+            /* Ocupa toda a largura disponível */
+        }
+
+        .menu.active ul,
+        .home.active ul {
+            display: flex;
+            /* Mostra os menus quando a classe "active" é adicionada */
+        }
+
+        .home img {
+            display: none;
+            /* Esconde a logo para economizar espaço em telas pequenas */
+        }
+    }
+
+    /* Regras para telas com largura mínima de 769px (desktops e tablets grandes) */
+    @media (min-width: 769px) {
+
+        .hamburger,
+        .hamburger2 {
+            display: none;
+            /* Esconde os botões de menu hambúrguer em telas grandes */
+        }
+
+        .menu ul,
+        .home ul {
+            display: flex;
+            /* Mostra os menus normalmente (horizontalmente) */
+        }
+    }
+
+    /*================= IMAGEM DA NOTÍCIA =================*/
+
+    /*LOCALILAÇÃO DA IMAGEM*/
+    .img {
+        display: flex;
+        /* Torna a div um container flexível */
+        justify-content: center;
+        /* Alinha o conteúdo (a imagem) ao centro horizontalmente */
+    }
+
+    /*ESTILO DA IMAGEM*/
+    .img img {
+        margin-top: 25px;
+        /* Margem acima */
+        margin-bottom: 25px;
+        /* Margem abaixo */
+        width: 700px;
+        /* Largura */
+        height: 400px;
+        /* Altura */
+        border-radius: 12px;
+        /* Arredondaemnto de bordas */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        /*Deslocamento horizontal;
+        Deslocamento vertical;
+        Desfoque da cor;
+        Cor ao redor dos cardes*/
+    }
+
+    /*================ TÍTULO DO TEXTO ================*/
+    .paragrafo h2 {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+            'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        /* Fonte */
+        color: hsl(219, 90%, 43%);
+        /* Cor da fonte */
+        text-align: center;
+        /* Centraliza o texto */
+    }
+
+    /*================= PARÁGRAFOS ================*/
+    .paragrafo {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+            'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        /* Fonte */
+        font-size: 17px;
+        /* Tammnho da fonte */
+        max-width: 1000px;
+        /* Largura máxima */
+        margin: auto;
+        /* Centraliza automaticamente */
+        padding: 0 20px;
+        /* Margens Internas */
+        text-align: justify;
+        /* Deixa o texto alinhado, com linhas do mesmo tamanho */
+        overflow: hidden;
+        /* Esconde o conteúdo quando estrapola os limites */
+
+    }
+
+    /*================= TAG HR ================*/
+    hr {
+        margin-left: 270px;
+        /*margem do lado esquerdo*/
+        margin-right: 270px;
+        /*margem do lado direito*/
+        border-color: hsl(219, 90%, 43%);
+        /*Cor do HR*/
+        border-width: 2px;
+        /* aumenta a espessura da borda */
+    }
+
+    /*================= NOTÍCIAS =================*/
+
+    /*TÍTULO PARA MAIS NOTÍCIAS*/
+    .titulo {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+            'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        /* Fonte */
+        color: hsl(219, 90%, 43%);
+        /* Cor da fonte */
+        text-align: center;
+        /* Texto centralziado */
+        margin-top: 25px;
+        /* Margem acima */
+    }
+
+    /* CONTAINER COM TODOS OS CARDS */
+    .grid-noticias {
+        display: grid;
+        /*Permite organizar os elementos em linhas e colunas */
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        /* Cria um número automático de colunas que:
+        - Têm no mínimo 300px de largura
+        - Se expandem igualmente até preencher o espaço disponível (1fr)
+        - auto-fit faz com que o número de colunas se ajuste automaticamente ao tamanho da tela 
+        */
+        gap: 20px;
+        /* Distância entre os itens */
+        margin: 20px auto;
+        /* Margens Externas */
+        max-width: 1200px;
+        /* Largura máxima */
+        padding: 0 20px;
+        /* Margens Internas */
+    }
+
+    /*ESTILO DOS CARDS*/
+    .card {
+        background: white;
+        /* Cor de fundo */
+        border-radius: 10px;
+        /* Arredondamneto de bordas */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        /*Deslocamento horizontal;
+        Deslocamento vertical;
+        Desfoque da cor;
+        Cor ao redor dos cardes*/
+        overflow: hidden;
+        /* Esconde o conteúdo quando estrapola os limites */
+    }
+
+    /* ESTILO DA IMAGEM DOS CARDS */
+    .card img {
+        width: 100%;
+        /* Largura */
+        height: 250px;
+        /* Altura */
+        object-fit: cover;
+        /* Faz a imagem preencher todo o espaço, sem distorcer */
+    }
+
+    /* ESTILO DOS TEXTOS NOS CARDS */
+    .card p {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+            'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        /* Fonte */
+        margin-left: 15px;
+        /* Margem à esquerda */
+        margin-right: 10px;
+        /* Margem a direita */
+        margin-bottom: 15px;
+        /* Margem abaixo */
+    }
+
+    /* ESTILO DOS TÍTULOS DOS CARDS */
+    .card h3 {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+            'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        /* Fonte */
+        font-size: 17px;
+        /* Tamnho da fonte */
+        color: hsl(219, 90%, 43%);
+        /* Cor da fonte */
+        padding: 15px;
+        /* Margens Internas */
+    }
+
+    /* EFEITOS AO PASSAR O MOUSE */
+    .card:hover {
+        transform: translateY(-5px);
+        /* Quando o mouse passa sobre o card, ele sobe 5px suavemente */
+        transition: transform 0.3s ease;
+        /* Transição ao passsar o mouse */
+    }
+
+    /*==================== RODAPÉ - FOOTER ===================*/
+    * {
+        margin: 0;
+        /* SEM MARGEM EXTERNA */
+        padding: 0;
+        /* SEM MARGEM INTERNA */
+    }
+
+    /*ESTILO GERAL DO RODAPÉ*/
+    footer {
+        background-color: hsl(219, 90%, 43%);
+        /* Cor de fundo */
+        color: white;
+        /* Cor da fonte */
+        padding: 50px 100px;
+        /* Margens Internas */
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+            'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        /* Fonte */
+    }
+
+    /*ESTILO DA IMAGEM*/
+    footer img {
+        max-width: 250px;
+        /* Largura máxima */
+        height: auto;
+        /* Altura automática */
+    }
+
+    /*CONTAINER PRINCIPAL DE TODAS COLUNAS DO RODAPÉ*/
+    #rodape {
+        display: flex;
+        /* Ficar alinhado lado a lado, horizontalamente */
+        gap: 100px;
+        /* Distância entre as colunas */
+        flex-wrap: wrap;
+        /* Permite quebrar para a outra linha */
+        justify-content: space-between;
+        /* Distribui os itens igualmente, com o maior espaço possível entre eles */
+    }
+
+    /*ESTILO COMUM PARA CADA COLUNA*/
+    #rodape div {
+        flex: 2 2 3%;
+        /* 
+    flex-grow: 2    = cresce 2x mais que grow:1
+    flex-shrink: 2  = encolhe 2x mais que shrink:1
+    flex-basis: 3%  = começa ocupando 3% do container 
+    */
+        min-width: 200px;
+        /*Largura maxima entre as colunas*/
+    }
+
+    /*TÍTULOS DE CADA COLUNA*/
+    #rodape h2 {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+            'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        /*Fonte*/
+        font-size: 25px;
+        /*Tamanho da fonte*/
+        margin-bottom: 15px;
+        /*Margem abaixo*/
+    }
+
+    /*ESTILO DE PARÁGRAFOS E ITENS DE LISTAS*/
+    #rodape p,
+    #rodape li {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+            'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        /*Fonte*/
+        font-size: 16px;
+        /*Tamanho da fonte */
+        line-height: 1.5;
+        /* Distância entre linhas */
+    }
+
+    /*=================== REDES SOCIAIS ===================*/
+
+    /*LINKS*/
+    .colunafor a {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+            'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        /* Fonte */
+        color: white;
+        /* Cor da fonte */
+        text-decoration: none;
+        /* Remove os sublinhados dos links*/
+        display: inline-block;
+        /* Permite o uso de margens e padding */
+        margin-bottom: 8px;
+        /*Margem abaixo*/
+    }
+
+    /*EFEITO AO PASSAR O MOUSE*/
+    .colunafor a:hover {
+        color: lch(92.77% 92.28 99.41);
+        /* Cor que ficará o texto */
+        transition: color 0.3s;
+        /* Transição de suavidade */
+    }
+
+    /*ÍCONES DAS REDES SOCIAIS*/
+    .sociais-midia i {
+        margin-right: 10px;
+        /* Posição dos ícones */
+    }
+
+    /*RESPOSIVIDADE DE TELAS MENORES, COMO: TABLETS, CELULARES, entre outros.*/
+    @media (max-width: 1000px) {
+        #rodape {
+            flex-direction: column;
+            /* As colunas ficam uma embaixo da outra*/
+            align-items: center;
+            /* As colunas ficam centralizadas*/
+        }
+
+        #rodape div {
+            flex: 1 1 100%;
+            /* 
+      flex-grow: 1    = cresce 1x mais que grow:1 --> CRESCE FLEXIVELMENTE
+      flex-shrink: 1  = encolhe 1x mais que shrink:1 --> ENCOLHE FLEXIVELMENTE
+      flex-basis: 100%  = começa ocupando 100% do container --> BASE FLEXÍVEL
+    */
+            max-width: 500px;
+            /* LLargura máxima entre as colunas*/
+            text-align: center;
+            /* Ostexto ficam centralizados */
+        }
+    }
+</style>
+
+<body>
+    <!-- BOTÃO HAMBÚRGUER 1 (ADICIONADO) -->
+    <button class="hamburger" onclick="toggleMenu()">☰ Menu Principal</button>
+
+    <!--Barra 01-->
+    <!--Menu 01-->
+    <div class="menu" id="menuPrincipal">
+        <ul type="disc">
+            <li><a href="site.html">Início</a></li>
+            <li><a href="frei.html">Frei Alberto Beretta</a></li>
+            <li><a href="agenda.html">Agenda Paroquial</a></li>
+            <li><a href="cbiblico.html">Círculos Bíblicos</a></li>
+            <li><a href="noticias.html">Notícias</a></li>
+            <li><a href="eventos.html">Eventos</a></li>
+        </ul>
+    </div>
+
+    <!-- BOTÃO HAMBÚRGUER 2 (ADICIONADO) -->
+    <button class="hamburger2" onclick="toggleHome()">☰ Menu Institucional</button>
+
+    <!--Barra 02-->
+    <!--Menu 02-->
+    <div class="home" id="menuHome">
+        <ul type="disc">
+            <a href="site.html"><img src="imagens/logo_paróquia.png"></a>
+            <li><a href="paroquia.html">Paróquia</a></li>
+            <li><a href="comunidade.html">Comunidades</a></li>
+            <li><a href="clero.html">Padres</a></li>
+            <li><a href="faleconosco.html">Fale Conosco</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="cadastro.html">Cadastre - se</a></li>
+            <li><a href="barra_pesquisa.html">Faça sua Busca</a></li>
+        </ul>
+    </div>
+
+    <!-- SCRIPT PARA FUNCIONAMENTO DO HAMBÚRGUER (ADICIONADO) -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("menuPrincipal");
+            menu.classList.toggle("active");
+        }
+
+        function toggleHome() {
+            const menu = document.getElementById("menuHome");
+            menu.classList.toggle("active");
+        }
+    </script>
+
+    <!--TÍTULO-->
+    <div class="titulo">
+        <h2>Caridade Cristã</h2>
+    </div>
+
+    <!--IMAGEM-->
+    <div class="img">
+        <img src="imagens/noticia_06.jpg">
+    </div>
+
+    <!--PARÁGRAFO-->
+    <div class="paragrafo">
+        <p> As caridades cristãs católicas são expressões concretas do amor ao próximo, um dos mandamentos centrais
+            ensinados por Jesus Cristo. Desde os primeiros tempos da Igreja, os fiéis são chamados a viver a
+            solidariedade,
+            a compaixão e a partilha com os mais necessitados, reconhecendo neles a presença viva de Cristo. A prática
+            da
+            caridade não é apenas um gesto de bondade, mas um compromisso de fé, uma resposta direta ao Evangelho.
+        </p><br>
+
+        <p> A Igreja Católica, ao longo dos séculos, sempre esteve presente nas ações de ajuda humanitária e social.
+            Hospitais, orfanatos, abrigos, escolas e centros de acolhimento foram fundados por missionários, freiras,
+            padres e leigos, movidos pela missão de servir. Grandes santos, como <strong>São Vicente de Paulo</strong>,
+            <strong>Santa Teresa de Calcutá</strong>, <strong>São Francisco de Assis</strong> e muitos outros, dedicaram
+            suas
+            vidas a cuidar dos pobres, dos doentes e dos marginalizados.
+        </p><br>
+
+        <p> Entre as instituições católicas mais conhecidas está a <strong>Caritas Internationalis</strong>, uma rede
+            mundial
+            presente em mais de 160 países, que promove ações de combate à fome, ajuda em desastres naturais,
+            acolhimento de
+            refugiados, defesa dos direitos humanos e desenvolvimento sustentável. Além dela, paróquias, dioceses e
+            comunidades
+            locais realizam, diariamente, campanhas de arrecadação de alimentos, roupas, medicamentos e serviços
+            voluntários.
+        </p><br>
+
+        <p> As caridades católicas não se limitam a oferecer ajuda material. Elas buscam, também, levar dignidade,
+            esperança,
+            amor e fortalecimento espiritual às pessoas. A ação caritativa está sempre ligada à promoção da justiça, da
+            paz e da
+            defesa dos mais fracos, seguindo o ensinamento de que <em>“a fé sem obras é morta”</em>, como nos lembra a
+            Carta de
+            São Tiago.
+        </p><br>
+
+        <p> O Papa e a Igreja constantemente reforçam que a caridade não é apenas dar o que sobra, mas partilhar com
+            amor, cuidar
+            do outro, ouvir, acolher e caminhar junto. As ações de caridade são, portanto, um testemunho vivo do amor
+            cristão e
+            um convite para que todos os fiéis vivam uma fé ativa, comprometida e transformadora.
+        </p><br>
+
+        <p> Dessa forma, as caridades cristãs católicas são uma resposta concreta ao chamado de Jesus para amar a Deus
+            sobre
+            todas as coisas e ao próximo como a si mesmo. Elas são sinais visíveis da presença do Reino de Deus no
+            mundo,
+            construindo pontes de fraternidade, solidariedade e esperança.
+        </p><br>
+
+    </div>
+
+    <!--BORDA DE DIVISÃO-->
+    <hr>
+
+    <!--TÍTULO-->
+    <div class="titulo">
+        <h2>Acompanhe as Notícias da Nossa Paróquia</h2>
+    </div>
+
+    <!--NOTÍCIAS -->
+    <div class="grid-noticias">
+        <div class="card">
+            <a href="noticia_01.html"><img src="imagens/noticia_01.jpeg" alt="Notícia 1"></a>
+            <h3>Sacramentos</h3>
+            <p>Os sacramentos são sinais visíveis da graça de Deus. A Igreja
+                Católica reconhece sete: batismo, eucaristia, crisma,
+                reconciliação, unção dos enfermos, ordem e matrimônio
+            </p>
+        </div>
+
+        <div class="card">
+            <a href="noticia_02.html"><img src="imagens/noticia_02.jpeg" alt="Notícia 2"></a>
+            <h3>Maria, Mãe de Jesus</h3>
+            <p>Maria tem um papel central na fé católica como Mãe de
+                Deus e modelo de fé e obediência. É especialmente venerada
+                nas orações e nas festas litúrgicas, como a Assunção e a
+                Imaculada Conceição.
+            </p>
+        </div>
+
+        <div class="card">
+            <a href="noticia_03.html"><img src="imagens/noticia_03.jpg" alt="Notícia 3"></a>
+            <h3>A Missa</h3>
+            <p>A celebração da Eucaristia é o coração da vida católica.
+                Nela, os fiéis revivem o sacrifício de Cristo e recebem o
+                Corpo e Sangue de Jesus.
+            </p>
+        </div>
+
+        <div class="card">
+            <a href="noticia_04.html"><img src="imagens/noticia_04.jpg" alt="Notícia 4"></a>
+            <h3>Os Santos</h3>
+            <p>Os santos são exemplos de vida cristã que intercedem
+                junto a Deus. Cada santo tem uma história única de fé,
+                coragem e serviço à Igreja.
+            </p>
+        </div>
+
+        <div class="card">
+            <a href="noticia_05.html"><img src="imagens/noticia_05.jpg" alt="Notícia 5"></a>
+            <h3>O Papa e o Vaticano</h3>
+            <p>O Papa é o líder espiritual da Igreja Católica, sucessor de
+                São Pedro. O Vaticano é o centro da Igreja, onde estão
+                localizados a Basílica de São Pedro e a Santa Sé.
+            </p>
+        </div>
+
+        <div class="card">
+            <a href="noticia_07.html"><img src="imagens/noticia_07.jpg" alt="Notícia 7"></a>
+            <h3>Habemus Papa!</h3>
+            <p>Após a eleição no conclave, o novo Papa foi apresentado ao
+                mundo na sacada da Basílica de São Pedro. Fiéis de todos os
+                cantos celebraram a escolha, marcada por esperança e renovação.
+            </p>
+        </div>
+
+        <div class="card">
+            <a href="noticia_08.html"><img src="imagens/noticia_08.jpg" alt="Notícia 8"></a>
+            <h3>Fé Renovada</h3>
+            <p>Milhares de fiéis reuniram-se em oração pela nova liderança da
+                Igreja Católica, com celebrações em diversas partes do mundo.
+            </p>
+        </div>
+
+        <div class="card">
+            <a href="noticia_09.html"><img src="imagens/noticia_09.jpeg" alt="Notícia 9"></a>
+            <h3>Mensagem de Paz</h3>
+            <p>O novo Papa enfatizou a importância da fraternidade, da justiça
+                social e do diálogo entre os povos na sua primeira homilia.
+            </p>
+        </div>
+    </div>
+
+    <!--RODAPÉ-->
+    <footer>
+        <div id="rodape">
+            <div class="colunaone">
+                <img src="imagens/logo_paróquia.png">
+                <p>A Paróquia Nossa Senhora da Conceição foi criada para
+                    fortalecer a fé da comunidade local e cultivar a devoção
+                    à Imaculada Conceição. Desde sua fundação, tornou-se um
+                    espaço de oração, celebração e acolhimento cristão.
+                </p>
+            </div>
+
+            <div class="colunatwo">
+                <h2>Secretária Paroquial</h2>
+                <p>Rua Tiradentes, S/N</p>
+                <p>Distrito Alto Brasil, <BR>munícipio de Grajaú - MA</p>
+            </div>
+
+            <div class="colunathrue">
+                <h2>Atendimento</h2>
+                <p>Segunda a Sexta-Feira</p>
+                <p>Manhã: 08h às 12h</p>
+                <p id="one">ATENDIMENTO SOMENTE PELA MANHÃ</p>
+            </div>
+
+            <div class="colunafor">
+                <h2>Redes Sociais</h2>
+                <a href="#" class="sociais-midia" id="instagram">
+                    <i class="fa-brands fa-instagram"></i><a
+                        href="https://www.instagram.com/paroquiansdconceicao/">Instagram </a><br>
+                </a>
+
+                <!--<a href="#" class="sociais-midia" id="facebook">
+                    <i class="fa-brands fa-facebook-f"></i> <a href="#">Facebook</a><br>
+                </a>
+
+                <a href="#" class="sociais-midia" id="whatsaap">
+                    <i class="fa-brands fa-whatsapp"></i> <a href="#">WhatsApp</a><br>
+                </a> -->
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
